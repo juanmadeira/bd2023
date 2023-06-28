@@ -1,34 +1,34 @@
 --- tabelas
 
 create table funcionarios(
-id serial primary key,
-nome varchar(50) not null,
-funcao varchar(50) not null
+    id serial primary key,
+    nome varchar(50) not null,
+    funcao varchar(50) not null
 );
 
 create table medicamentos(
-id serial primary key,
-nome varchar(50) not null,
-laboratorio varchar(50) not null,
-preco numeric(10,2) not null check(preco > 0),
-quant integer not null check(quant > 0)
+    id serial primary key,
+    nome varchar(50) not null,
+    laboratorio varchar(50) not null,
+    preco numeric(10,2) not null check(preco > 0),
+    quant integer not null check(quant > 0)
 );
 
 create table clientes(
-id serial primary key not null,
-nome varchar(50) not null,
-endereco varchar(50) not null
+    id serial primary key not null,
+    nome varchar(50) not null,
+    endereco varchar(50) not null
 );
 
 create table compras(
-id serial primary key not null,
-funcionario integer not null,
-foreign key(funcionario) references funcionarios(id),
-medicamento integer not null,
-foreign key(medicamento) references medicamentos(id),
-cliente integer not null,
-foreign key(cliente) references clientes(id),
-data_compra timestamp not null
+    id serial primary key not null,
+    funcionario integer not null,
+    foreign key(funcionario) references funcionarios(id),
+    medicamento integer not null,
+    foreign key(medicamento) references medicamentos(id),
+    cliente integer not null,
+    foreign key(cliente) references clientes(id),
+    data_compra timestamp not null
 );
 
 --- populando as tabelas

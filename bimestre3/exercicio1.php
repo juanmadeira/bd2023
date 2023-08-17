@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Exercício 1 - PHP</title>
+        <title>exercício 1 - PHP</title>
         <style>
             /* cursor */
             * {
@@ -74,7 +74,7 @@
             }
         </style>
         <!--
-        Criar uma tabela em HTML e PHP, que crie um indice a partir do 0 até 20, com as seguintes colunas: 
+        criar uma tabela em HTML e PHP, que crie um indice a partir do 0 até 20, com as seguintes colunas: 
         apresentar a potenciacao por 2
         apresentar o fatorial.
         exemplo:
@@ -87,9 +87,9 @@
     <body>
         <table>
             <tr>
-                <th>Número</th>
-                <th>Quadrado</th>
-                <th>Fatorial</th>      
+                <th>número</th>
+                <th>quadrado</th>
+                <th>fatorial</th>      
             </tr>
             <?php
                 $array = array(

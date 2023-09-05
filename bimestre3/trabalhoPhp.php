@@ -137,8 +137,8 @@
     </head>
     <body>
         <?php
-            $bdcon = pg_connect("dbname=semaninha");
-            $con_string = "host=localhost dbname=semaninha user=postgres password=postgres";
+            $bdcon = pg_connect("dbname=segundoTrabalho");
+            $con_string = "host=localhost dbname=segundoTrabalho user=postgres password=postgres";
             if(!$dbcon = pg_connect($con_string)) die ("erro ao conectar ao banco".pg_last_error($dbcon));
         ?>
         <h1>formulário</h1>

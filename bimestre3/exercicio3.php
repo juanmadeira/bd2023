@@ -93,25 +93,15 @@
         <!--
             create table Artista (
                 id_artista serial primary key,
-                nome_artista varchar(50) not null
-            );
-
-            insert into Artista (nome_artista) values
-            ('El Toro Fuerte'),
-            ('Legião Urbana'),
-            ('Lupe de Lupe'),
-            ('Radiohead');
-
-            create table Album (
-                id_album serial primary key,
+                nome_artista varchar(50) not null,
                 nome_album varchar(100) not null
             );
 
-            insert into Album (nome_album) values
-            ('Um Tempo Lindo Para Estar Vivo'),
-            ('Dois'),
-            ('Quarup'),
-            ('Kid A');
+            insert into Artista (nome_artista, nome_album) values
+            ('El Toro Fuerte', 'Um Tempo Lindo Para Estar Vivo'),
+            ('Legião Urbana', 'O Descobrimento do Brasil'),
+            ('Lupe de Lupe', 'Um Tijolo Com Seu Nome'),
+            ('Radiohead', 'Kid A');
         -->
     </head>
     <body>
@@ -133,13 +123,13 @@
             <?php
                 // exemplo de execução da query e busca: 
                 print "<h2>executar consulta (sql)</h2>";
-                $result = pg_query($dbcon, "SELECT id_artista, nome_artista FROM Artista");    
+                $result = pg_query($dbcon, "SELECT id_artista, nome_artista, nome_album FROM Artista");    
                 if (!$result) {
                     echo "erro na consulta";
                     exit;
                 }
                 while ($row = pg_fetch_row($result)) {
-                    echo "<tr><td> $row[0] </td><td> $row[1] </td></tr>";
+                    echo "<tr><td> $row[0] </td><td> $row[1] </td><td> $row[2] </td></tr>";
                 }
             ?>
         </table>

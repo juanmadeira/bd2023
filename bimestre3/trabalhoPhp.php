@@ -74,7 +74,25 @@
             }
 
             button {
+                background: var(--content-main-hover);
+                border-bottom: 4px inset rgba(0,0,0,.5);
+                border-left: 4px inset rgba(0,0,0,.5);
+                border-right: 4px inset rgba(255,255,255,.5);
+                border-top: 4px inset rgba(255,255,255,.5);
+                box-sizing: border-box;
+                color: #000;
+                cursor: pointer;
+                display: inline-block;
+                font-family: "VT-100", fixedsys, System, monospace;
+                font-size: 1rem;
+                margin: .5rem;
+                min-width: 50pt;
+                padding: .25rem;
+                width: auto;
+            }
 
+            button:hover {
+                background: var(--content-main);
             }
 
             .table {

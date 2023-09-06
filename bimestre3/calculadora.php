@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="https://jutipia.neocities.org/img/figure/icon.ico" type="image/icon type">
+        <link rel="icon" href="https://jutipia.neocities.org/img/figure/icon.ico">
         <title>calculadora em php</title>
         <style>
             /* cursor */

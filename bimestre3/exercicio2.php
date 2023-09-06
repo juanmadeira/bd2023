@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="https://jutipia.neocities.org/img/figure/icon.ico" type="image/icon type">
+        <link rel="icon" href="https://jutipia.neocities.org/img/figure/icon.ico">
         <title>exercício 2 - php</title>
         <style>
             /* cursor */

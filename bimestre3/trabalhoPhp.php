@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="shortcut icon" href="https://jutipia.neocities.org/img/figure/icon.ico" type="image/icon type">
+        <link rel="icon" href="https://jutipia.neocities.org/img/figure/icon.ico">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
         <title>segundo trabalho - 3º bi | php</title>
         <style>
@@ -115,9 +115,8 @@
             }
 
             function changeDisplay() {
-                for (let i = 0; i < $('.table').length; i++) {
-                    qs('.table').style.display = "block";
-                }
+                qs('table.table').style.display = "block";
+                qs('h1.table').style.display = "block";
             }
         </script>
         <!--
@@ -137,15 +136,19 @@
     </head>
     <body>
         <?php
-            $bdcon = pg_connect("dbname=bd2023");
+            $bdcon = pg_connect("host=localhost dbname=bd2023 user=postgres password=postgres");
             $con_string = "host=localhost dbname=bd2023 user=postgres password=postgres";
             if(!$dbcon = pg_connect($con_string)) die ("erro ao conectar ao banco".pg_last_error($dbcon));
         ?>
         <h1>formulário</h1>
         <form method="POST" action="">
-            <label for="num">salário bruto: R$</label>
-            <input type="text" name="num" required><br>
-            <button type="submit" name="calculate" onclick="changeDisplay();">Calcular</button>
+            <label for="item">insira o item a ser adicionado: </label>
+            <input type="text" name="item" required><br>
+            <label for="qtd">insira a sua quantidade no estoque: </label>
+            <input type="text" name="qtd" required><br>
+            <label for="prec">insira o seu preço: R$</label>
+            <input type="text" name="prec" required><br>
+            <button type="submit" name="calculate" onclick="changeDisplay();">adicionar</button>
         </form>
         <h1 class="table">listagem de itens</h1>
         <table class="table">

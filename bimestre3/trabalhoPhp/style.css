@@ -1,0 +1,105 @@
+/* variaveis do css */
+:root {
+    --body-bg-image: url('https://jutipia.neocities.org/img/figure/starsagain.gif');
+    
+    /* cores */
+    --content-main: #00ffff;
+    --content-main-hover: #00c0c0;
+    --a: #e0ffff;
+    --a-hover: #003030;
+    --inner-background: #1a1a1a90;
+    --border: #e1910566;
+}
+
+/* cursor */
+* {
+    cursor: url(https://cur.cursors-4u.net/anime/ani-6/ani549.cur), auto
+}
+
+/* cor ao selecionar texto */
+::selection {
+    text-shadow: 0 0 2px #00ff60;
+    color:#00ff60;
+}
+
+::-moz-selection {
+    text-shadow: 0 0 2px #00ff60;
+    color:#00ff60;
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 5px;
+    height: 10px;
+    background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #00abab50;  
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #008b8b50;  
+}
+
+/* body */
+body {
+    font-family: "VT-100", fixedsys, System, monospace;
+    background-image: var(--body-bg-image);
+    background-color: black;
+    display: flex;
+    flex-flow: column wrap;
+    text-align: center;
+    color: var(--content-main);
+}
+
+.container {
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px;
+    border: solid 2px var(--border);
+    column-gap: 200px;
+    min-width: 25%;
+}
+
+.button {
+    background: var(--content-main-hover);
+    border-bottom: 4px inset rgba(0,0,0,.5);
+    border-left: 4px inset rgba(0,0,0,.5);
+    border-right: 4px inset rgba(255,255,255,.5);
+    border-top: 4px inset rgba(255,255,255,.5);
+    box-sizing: border-box;
+    color: #000;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    font-family: "VT-100", fixedsys, System, monospace;
+    font-size: 1rem;
+    margin: .5rem;
+    min-width: 50pt;
+    padding: .25rem;
+    width: auto;
+}
+
+.button:hover {
+    background: var(--content-main);
+}
+
+table th {
+    padding: 0 25px;
+}
+
+table td {
+    margin: 0;
+    padding: 4px;
+}
+
+table tr:first-child {
+    text-decoration: none;
+    color: #e0ffff;
+}
+
+table tr:nth-child(odd) {
+    background: var(--inner-background);
+}

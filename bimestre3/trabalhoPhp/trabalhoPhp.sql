@@ -1,11 +1,11 @@
-create table Item (
+create table Itens (
     id_item serial primary key,
     nome_item varchar(50) not null,
     qtd_item int not null,
     preco_item numeric(10, 2) not null
 );
 
-insert into Item (nome_item, qtd_item, preco_item) values
+insert into Itens (nome_item, qtd_item, preco_item) values
 ('Contrabaixo Strinberg Precision', '2', '1299.99'),
 ('Guitarra Epiphone SG', '4', '6499.99'),
 ('Guitarra Fender Jazzmaster', '7', '7499.99'),

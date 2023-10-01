@@ -12,18 +12,11 @@
         <?php
             error_reporting(0);
             $path = "host=localhost dbname=bd2023 user=postgres password=postgres";
-            if(!$cc = pg_connect($path)) die ("erro ao conectar ao banco<br>");
+            if (!$dbConnection = pg_connect($path)) die ("erro ao conectar ao banco<br>");
             
-            pg_query($cc, "create table Itens (
-                id_item serial primary key,
-                nome_item varchar(50) not null,
-                qtd_item int not null,
-                preco_item numeric(10, 2) not null
-            );");
-
             if (!empty($_POST['remover'])) {
                 $remover = $_POST['remover'];
-                pg_query($cc, "DELETE FROM Itens WHERE id_item = $remover");
+                pg_query($dbConnection, "DELETE FROM Itens WHERE id_item = $remover");
             }
         ?>
         <h1 class="table">listagem de itens</h1>
@@ -37,7 +30,7 @@
                     <th>remover</th>
                 </tr>
                 <?php
-                    $result = pg_query($cc, "SELECT id_item, nome_item, qtd_item, preco_item FROM Itens");
+                    $result = pg_query($dbConnection, "SELECT id_item, nome_item, qtd_item, preco_item FROM Itens");
                     while ($row = pg_fetch_row($result)) {
                         echo "
                         <tr>
@@ -55,13 +48,7 @@
                     }
                 ?>
             </table>
-            <form action="./index.php" method="post">
-                <?php
-                    pg_query($cc, "DROP TABLE ITENS");
-                ?>
-                <button type="submit" class="button">🧹</button>
-                <a href="./insert.php" class="button">➕</a>
-            </form>
+            <a href="./insert.php" class="button">➕</a>
         </div>
     </body>
 </html>

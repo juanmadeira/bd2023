@@ -12,7 +12,7 @@
         <?php
             error_reporting(0);
             $path = "host=localhost dbname=bd2023 user=postgres password=postgres";
-            if(!$cc = pg_connect($path)) die ("erro ao conectar ao banco<br>");
+            if (!$dbConnection = pg_connect($path)) die ("erro ao conectar ao banco<br>");
         ?>
         <h1>adição de itens</h1>
         <div class="container">
@@ -26,7 +26,7 @@
                 <a href="./index.php" class="button">📜</a>
                 <button type="submit" name="adicionar" class="button">✔️</button>
                 <?php
-                    pg_query($cc, "INSERT INTO Itens (nome_item, qtd_item, preco_item) VALUES ('".$_POST['item']."',".$_POST['qtd'].",".$_POST['preco'].");");
+                    pg_query($dbConnection, "INSERT INTO Itens (nome_item, qtd_item, preco_item) VALUES ('".$_POST['item']."',".$_POST['qtd'].",".$_POST['preco'].");");
                 ?>
             </form>
         </div>

@@ -6,13 +6,20 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="https://jutipia.neocities.org/img/figure/icon.ico">
         <link rel="stylesheet" href="./style.css">
-        <title>select | segundo trabalho 3º bi | php</title>
+        <title>listagem de itens | segundo trabalho 3º bi | php</title>
     </head>
     <body>
         <?php
             error_reporting(0);
             $path = "host=localhost dbname=bd2023 user=postgres password=postgres";
             if(!$cc = pg_connect($path)) die ("erro ao conectar ao banco<br>");
+            
+            pg_query($cc, "create table Itens (
+                id_item serial primary key,
+                nome_item varchar(50) not null,
+                qtd_item int not null,
+                preco_item numeric(10, 2) not null
+            );");
 
             if (!empty($_POST['remover'])) {
                 $remover = $_POST['remover'];
@@ -30,11 +37,7 @@
                     <th>remover</th>
                 </tr>
                 <?php
-                    $result = pg_query($cc, "SELECT id_item, nome_item, qtd_item, preco_item FROM Itens");    
-                    if (!$result) {
-                        echo "erro na consulta";
-                        exit;
-                    }
+                    $result = pg_query($cc, "SELECT id_item, nome_item, qtd_item, preco_item FROM Itens");
                     while ($row = pg_fetch_row($result)) {
                         echo "
                         <tr>
@@ -52,7 +55,13 @@
                     }
                 ?>
             </table>
-            <a href="./insert.php" class="button">➕</a>
+            <form action="./index.php" method="post">
+                <?php
+                    pg_query($cc, "DROP TABLE ITENS");
+                ?>
+                <button type="submit" class="button">🧹</button>
+                <a href="./insert.php" class="button">➕</a>
+            </form>
         </div>
     </body>
 </html>

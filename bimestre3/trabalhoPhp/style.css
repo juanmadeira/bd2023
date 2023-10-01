@@ -3,12 +3,12 @@
     --body-bg-image: url('https://jutipia.neocities.org/img/figure/starsagain.gif');
     
     /* cores */
-    --content-main: #00ffff;
-    --content-main-hover: #00c0c0;
     --a: #e0ffff;
     --a-hover: #003030;
-    --inner-background: #1a1a1a90;
     --border: #e1910566;
+    --content-main: #00ffff;
+    --content-main-hover: #00c0c0;
+    --inner-background: #1a1a1a90;
 }
 
 /* cursor */

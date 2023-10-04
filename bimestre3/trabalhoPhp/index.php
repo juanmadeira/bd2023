@@ -19,9 +19,9 @@
                 pg_query($dbConnection, "DELETE FROM Itens WHERE id_item = $remover");
             }
         ?>
-        <h1 class="table">listagem de itens</h1>
+        <h1>listagem de itens</h1>
         <div class="container">
-            <table class="table">
+            <table>
                 <tr>
                     <th>id</th>
                     <th>item</th>
@@ -39,7 +39,7 @@
                             <td>$row[2]</td>
                             <td>R$$row[3]</td>
                             <td>
-                                <form action='./index.php' method='post'>
+                                <form action='./index.php' method='post' class='remove-form'>
                                     <input type='hidden' id='inputHidden' name='remover' value='$row[0]'>
                                     <button type='submit' class='button'>❌</button>
                                 </form>

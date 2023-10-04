@@ -49,8 +49,8 @@ body {
     background-image: var(--body-bg-image);
     background-color: black;
     display: flex;
-    flex-flow: column wrap;
     text-align: center;
+    flex-flow: column wrap;
     color: var(--content-main);
 }
 
@@ -74,16 +74,64 @@ body {
     cursor: pointer;
     display: inline-block;
     text-decoration: none;
+    text-align: center;
     font-family: "VT-100", fixedsys, System, monospace;
     font-size: 1rem;
     margin: .5rem;
-    min-width: 50pt;
+    min-width: 4rem;
     padding: .25rem;
     width: auto;
 }
 
 .button:hover {
     background: var(--content-main);
+}
+
+form {
+    display: flex;
+    flex-flow: column wrap;
+    text-align: left;
+}
+
+form input {
+    border: dashed 1px var(--a-hover);
+    color: var(--a);
+    background: none;
+    padding: 0.5rem;
+    box-shadow: none;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+form input:focus {
+    background: none;
+    outline: none;
+}
+
+form .form-buttons {
+    margin: 0 auto;
+}
+
+table .remove-form {
+    align-items: center;
+}
+
+table .remove-form .button {
+    padding: 0;
+    margin: .25rem;
+}
+
+table button {
+    margin: 0;
+    padding: 0;
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
 }
 
 table th {

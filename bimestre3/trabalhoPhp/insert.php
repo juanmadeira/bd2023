@@ -17,14 +17,16 @@
         <h1>adição de itens</h1>
         <div class="container">
             <form action="./insert.php" method="post">
-                <label for="item">insira o item a ser adicionado: </label>
-                <input type="text" name="item"><br>
-                <label for="qtd">insira a sua quantidade no estoque: </label>
-                <input type="text" name="qtd"><br>
-                <label for="preco">insira o seu preço: R$</label>
-                <input type="text" name="preco"><br>
-                <a href="./index.php" class="button">📜</a>
-                <button type="submit" name="adicionar" class="button">✔️</button>
+                <label for="item">insira o item a ser adicionado:</label>
+                <input type="text" name="item">
+                <label for="qtd">insira a quantidade no estoque:</label>
+                <input type="text" name="qtd">
+                <label for="preco">insira o preço:</label>
+                <input type="text" name="preco">
+                <div class="form-buttons">
+                    <a href="./index.php" class="button">📜</a>
+                    <button type="submit" name="adicionar" class="button">✔️</button>
+                </div>
                 <?php
                     pg_query($dbConnection, "INSERT INTO Itens (nome_item, qtd_item, preco_item) VALUES ('".$_POST['item']."',".$_POST['qtd'].",".$_POST['preco'].");");
                 ?>

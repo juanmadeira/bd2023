@@ -57,6 +57,7 @@ body {
 .container {
     text-align: center;
     margin: 0 auto;
+    margin-bottom: 1.5rem;
     padding: 10px;
     border: solid 2px var(--border);
     column-gap: 200px;

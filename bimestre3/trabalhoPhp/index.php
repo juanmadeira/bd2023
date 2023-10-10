@@ -58,10 +58,9 @@
                     <th>item</th>
                     <th>quantidade</th>
                     <th>preço</th>
-                    <th>remover</th>
                 </tr>
                 <?php
-                    $result = pg_query($dbConnection, "SELECT id_item, nome_item, MAX(qtd_item), preco_item FROM Itens");
+                    $result = pg_query($dbConnection, "SELECT id_item, nome_item, qtd_item, preco_item FROM Itens WHERE preco_item = (SELECT MAX(preco_item) FROM Itens)");
                     while ($row = pg_fetch_row($result)) {
                         echo "
                         <tr>
@@ -69,12 +68,6 @@
                             <td>$row[1]</td>
                             <td>$row[2]</td>
                             <td>R$$row[3]</td>
-                            <td>
-                                <form action='./index.php' method='post' class='remove-form'>
-                                    <input type='hidden' id='inputHidden' name='remover' value='$row[0]'>
-                                    <button type='submit' class='button'>❌</button>
-                                </form>
-                            </td>
                         </tr>";
                     }
                 ?>
@@ -82,9 +75,49 @@
         </div>
         <div class="container">
             <h2>item mais barato</h2>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>item</th>
+                    <th>quantidade</th>
+                    <th>preço</th>
+                </tr>
+                <?php
+                    $result = pg_query($dbConnection, "SELECT id_item, nome_item, qtd_item, preco_item FROM Itens WHERE preco_item = (SELECT MIN(preco_item) FROM Itens)");
+                    while ($row = pg_fetch_row($result)) {
+                        echo "
+                        <tr>
+                            <td>$row[0]</td>
+                            <td>$row[1]</td>
+                            <td>$row[2]</td>
+                            <td>R$$row[3]</td>
+                        </tr>";
+                    }
+                ?>
+            </table>
         </div>
         <div class="container">
             <h2>itens sem estoque</h2>
+            <table>
+                <tr>
+                    <th>id</th>
+                    <th>item</th>
+                    <th>quantidade</th>
+                    <th>preço</th>
+                </tr>
+                <?php
+                    $result = pg_query($dbConnection, "SELECT id_item, nome_item, qtd_item, preco_item FROM Itens WHERE qtd_item = ('0')");
+                    while ($row = pg_fetch_row($result)) {
+                        echo "
+                        <tr>
+                            <td>$row[0]</td>
+                            <td>$row[1]</td>
+                            <td>$row[2]</td>
+                            <td>R$$row[3]</td>
+                        </tr>";
+                    }
+                ?>
+            </table>
         </div>
     </body>
 </html>

@@ -97,7 +97,7 @@ form {
 form input {
     border: dashed 1px var(--a-hover);
     color: var(--a);
-    background: none;
+    background: var(--inner-background);
     padding: 0.5rem;
     box-shadow: none;
     justify-content: center;
@@ -105,7 +105,8 @@ form input {
 }
 
 form input:focus {
-    background: none;
+    border: dashed 1px var(--content-main-hover);
+    background: var(--inner-background);
     outline: none;
 }
 

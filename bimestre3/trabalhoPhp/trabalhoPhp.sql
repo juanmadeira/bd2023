@@ -1,3 +1,6 @@
+create database bd2023;
+-- \c bd2023 
+
 create table Itens (
     id_item serial primary key,
     nome_item varchar(50) not null,

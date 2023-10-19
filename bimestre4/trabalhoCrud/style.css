@@ -1,0 +1,25 @@
+:root {
+    /* cores */
+    --body-bg-color: #000
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    cursor: url(https://ani.cursors-4u.net/others/oth-9/oth839.cur), auto;
+}
+
+body {
+    background: var(--body-bg-color);
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    margin: 0 auto;
+}
+
+header img {
+    width: 75%;
+}

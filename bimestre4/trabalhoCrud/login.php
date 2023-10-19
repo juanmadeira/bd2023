@@ -8,31 +8,21 @@
 </head>
 <body>
     <?php
-        $path = "host=localhost dbname=trabalho32 user=postgres password=postgres";
+        $path = "host=localhost dbname=trabalho41 user=postgres password=postgres";
         if(!$connection = pg_connect($path)) die ("Erro ao conectar ao banco<br>");
-
-        pg_query($connection, "INSERT INTO itens (nm, qt, vl) VALUES ('".$_POST['nome']."',".$_POST['quan'].",".$_POST['pre'].");");
     ?>
     <form action="insert.php" method="post">
         <div class="container">
-            <label for="nome">Nome do Item:</label>
-            <input type="text" id="nome" name="nome"></input>
+            <label for="usu">Email:</label>
+            <input type="text" id="usu" name="usu"></input>
         </div>
-
         <div class="container">
-            <label for="quan">Quantidade:</label>
-            <input type="text" id="quan" name="quan"></input>
+            <label for="se">Senha:</label>
+            <input type="text" id="se" name="se"></input>
         </div>
-
         <div class="container">
-            <label for="pre">Preço:</label>
-            <input type="text" id="pre" name="pre"></input>
+        <a href="index.html"><input type="button" value="LOGIN">
         </div>
-
-        <div class="container">
-            <input type="submit" value="INSERIR">
-        </div>
-
         <div class="container">
             <a href="index.html"><input type="button" value="VOLTAR"></a>
         </div>

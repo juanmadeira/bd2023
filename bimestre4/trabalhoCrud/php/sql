@@ -1,0 +1,13 @@
+--cria o banco de dados do trabalho
+CREATE DATABASE trabalho32;
+
+--conecta no banco de dados
+\c trabalho32
+
+--cria a tabela dos itens
+CREATE TABLE itens (
+    id SERIAL PRIMARY KEY,
+    nm VARCHAR(35) NOT NULL,
+    qt INT NOT NULL,
+    vl FLOAT NOT NULL
+);

@@ -1,0 +1,175 @@
+/* variaveis do css */
+:root {
+    /* cores */
+    --body-bg-color: #C2DEDC;
+    --btn-color: #FF9209;
+    --btn-focus-hover-color: #FB8332;
+    --btn-active-color: #C85000;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
+/* cor ao selecionar texto */
+::selection {
+    color:#C85000;
+    text-shadow: 0 0 2px #C85000;
+}
+  
+::-moz-selection {
+    color:#C85000;
+    text-shadow: 0 0 2px #C85000;
+}
+
+/* mudancas na pagina inteira */
+* {
+    cursor: url(https://ani.cursors-4u.net/others/oth-9/oth839.cur), auto;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: var(--body-bg-color); /* caso o gradiente não carregue */
+    background: linear-gradient(#C2DEDC, #EAC696); /* caso a imagem não carregue */
+    background-image: url('../img/library-background.avif');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'EB Garamond', serif;
+}
+
+.button {
+    align-items: center;
+    background-clip: padding-box;
+    background-color: var(--btn-color);
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    margin: 0;
+    padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+    position: relative;
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+        -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: auto;
+}
+
+.button:hover,
+.button:focus {
+    background-color: var(--btn-focus-hover-color);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+}
+
+.button:hover {
+    transform: translateY(-1px);
+}
+
+.button:active {
+    background-color: var(--btn-active-color);
+    box-shadow: rgba(0, 0, 0, .06) 0 2px 4px;
+    transform: translateY(0);
+}
+
+/* header */
+header {
+    padding: 1rem;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+header a {
+    margin: 0 auto;
+}
+
+header img {
+    width: 100%;
+    height: auto;
+}
+
+/* formulário */
+main {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form .container {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: flex-start;
+    margin: 1rem 0 1rem 0;
+}
+
+label {
+    background-color: var(--btn-color);
+    padding: 0.5rem 1rem 0.5rem 0.5rem;
+    border-top-right-radius: 25px;
+}
+
+input {
+    color: black;
+    border: 2px solid var(--btn-color);
+    border-radius: 0 8px 8px;
+    padding: 10px 25px;
+    max-width: 190px;
+}
+
+input:focus {
+    border: none;
+}
+
+#bookworm-img {
+    width: 75%;
+}
+
+/* tabela */
+table {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    align-content: center;
+    width: 25%;
+}
+
+td {
+    background-color: var(--btn-color);
+    color: black;
+    border: solid black 1pt;
+    padding: 3pt;
+    text-align:center;
+}
+
+table img {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+/* media queries */
+@media (max-width: 991px) {
+    main {
+        display: flex;  
+        flex-flow: column wrap;
+    }
+
+    form .container {
+        flex-direction: column;
+    }
+}

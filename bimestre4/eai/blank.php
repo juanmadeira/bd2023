@@ -4,7 +4,6 @@
     
     session_start();
 
-
     switch ($_SESSION['type']) {
 
         case 'user':

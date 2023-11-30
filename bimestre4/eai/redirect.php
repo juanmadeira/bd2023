@@ -1,4 +1,13 @@
- <?php
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1347/1347631.png" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="./script/script.js" defer></script>
+    <title>the amazing digital library</title>
+</head>
+<?php
     $path = "host=localhost dbname=trabalho41 user=postgres password=postgres";
     if(!$connection = pg_connect($path)) die ("Erro ao conectar ao banco<br>");
 

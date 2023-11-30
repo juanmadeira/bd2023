@@ -20,6 +20,22 @@
     text-shadow: 0 0 2px #C85000;
 }
 
+/* scrollbar */
+::-webkit-scrollbar {
+    background: #000000;
+    height: 10px;
+    width: 5px;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #C85000;  
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #C85000;  
+}
+
 /* mudancas na pagina inteira */
 * {
     cursor: url(https://ani.cursors-4u.net/others/oth-9/oth839.cur), auto;
@@ -49,7 +65,7 @@ body {
     border-radius: .25rem;
     box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
     box-sizing: border-box;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     display: inline-flex;
     font-family: system-ui, -apple-system, system-ui, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -85,6 +101,50 @@ body {
     transform: translateY(0);
 }
 
+.title-main img {
+    margin: 0 auto;
+    text-align: center;
+}
+
+.row-main {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.column-main {
+    margin: 0 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-between;
+}   
+
+.container {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    margin: 1rem 0 1rem 0;
+}
+
+.info {
+    align-self: flex-start;
+    margin: 0 0 5% 10%;
+    font-size: smaller;
+    color: white;
+    display: flex;
+    text-align: start;
+}
+
+.emprestimos {
+    background-color: var(--btn-color);
+    margin: 1rem 0 1rem 0;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
 /* header */
 header {
     padding: 1rem;
@@ -102,21 +162,6 @@ header img {
 }
 
 /* formulário */
-main {
-    margin: 0 auto;
-    display: flex;
-    flex-flow: row nowrap;
-    align-items: center;
-    justify-content: space-between;
-}
-
-form .container {
-    display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    margin: 1rem 0 1rem 0;
-}
-
 label {
     background-color: var(--btn-color);
     padding: 0.5rem 1rem 0.5rem 0.5rem;
@@ -128,11 +173,11 @@ input {
     border: 2px solid var(--btn-color);
     border-radius: 0 8px 8px;
     padding: 10px 25px;
-    max-width: 190px;
+    max-width: 300px;
 }
 
 input:focus {
-    border: none;
+    outline: none;
 }
 
 #bookworm-img {
@@ -145,31 +190,76 @@ table {
     flex-flow: column wrap;
     align-items: center;
     align-content: center;
-    width: 25%;
+    border-spacing: 0.75rem;
+}
+
+.table-title img {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.column-title {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+th {
+    background-color: var(--btn-color);
+    color: black;
+    padding: 0.5rem;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
 }
 
 td {
     background-color: var(--btn-color);
     color: black;
-    border: solid black 1pt;
-    padding: 3pt;
+    padding: 0.5rem;
+    border-radius: 10px;
     text-align:center;
+    width: 1rem;
+}
+
+.td-img {
+    border-radius: 0px;
+    padding: 0;
+    outline: 1px dashed var(--btn-color);
+    width: 25px;
+}
+
+.td-form {
+    background: none;
+    border: none;
+}
+
+.td-form input, textarea {
+    border-radius: 10px;
+    background-color: var(--btn-color);
+}
+
+.td-form:hover {
+    transform: translateY(-2px);
 }
 
 table img {
-    display: inline-block;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 /* media queries */
 @media (max-width: 991px) {
-    main {
-        display: flex;  
+    .title-main img {
+        display: flex;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .row-main {
         flex-flow: column wrap;
     }
 
-    form .container {
-        flex-direction: column;
+    .container {
+        flex-flow: column wrap;
     }
 }

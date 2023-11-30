@@ -12,10 +12,10 @@
     </head>
     <body>
         <header>
-            <a href="./index.html"><img src="./img/logo-1.png" alt="the amazing"/></a>
-            <a href="./index.html"><img src="./img/logo-2.png" alt="digital library" /></a>
+            <a href="./index.php"><img src="./img/logo-1.png" alt="the amazing"/></a>
+            <a href="./index.php"><img src="./img/logo-2.png" alt="digital library" /></a>
         </header>
-        <main>
+        <main class="row-main">
             <form action="redirect.php" method="post">
                 <div class="container">
                     <label for="nome">Nome:</label>
@@ -38,7 +38,7 @@
                     <input class="button" type="submit" value="Registrar-se" />
                 </div>
             </form>
-            <img src="./img/bookworm.png" id="bookworm-img" onclick="playSound()" alt="worm from bookworm">
+            <img src="./img/bookworm.png" id="bookworm-img" onclick="playSound()" alt="worm from bookworm" />
             <form action="redirect.php" method="post">
                 <div class="container">
                     <label for="usu">Email:</label>

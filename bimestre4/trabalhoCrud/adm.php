@@ -20,7 +20,7 @@
             session_start();
 
                 echo "<div class='info'>";
-                echo "Logado como <br>";
+                echo "Logado como: <br>";
                 echo "Nome: " . $_SESSION['usernm'] . '<br>';
                 echo "Email: " . $_SESSION['usermail'];
                 echo "</div>";

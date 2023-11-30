@@ -5,7 +5,6 @@
     session_start();
 
     switch ($_SESSION['type']) {
-
         case 'user':
             header("location: usuario.php");
             break;

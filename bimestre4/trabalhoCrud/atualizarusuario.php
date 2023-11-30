@@ -41,7 +41,7 @@
 
             $row = pg_fetch_row($result);
 
-            echo "<form action='telaadm.php' method='post'>
+            echo "<form action='adm.php' method='post'>
             <div class='container'>
                 <label for='nome'>Nome:</label>
                 <input type='text' id='nm' name='nm' value='".$row[1]."'></input>

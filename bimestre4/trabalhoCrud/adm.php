@@ -90,7 +90,7 @@
                             <td>".$row[1]."</td>
                             <td>".$row[2]."</td>
                             <td class='td-form'>
-                                <form method='post' action='adm.php' >
+                                <form method='post' action='adm.php'>
                                     <input type='hidden' id='deleteById' name='deleteById' value='".$row[0]."'>
                                     <input type='submit' value='Excluir'>
                                 </form>

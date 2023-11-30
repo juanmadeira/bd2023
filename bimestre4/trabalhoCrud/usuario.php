@@ -20,7 +20,7 @@
             session_start();
 
                 echo "<div class='info'>";
-                echo "Logado como <br>";
+                echo "Logado como: <br>";
                 echo "Nome: " . $_SESSION['usernm'] . '<br>';
                 echo "Email: " . $_SESSION['usermail'];
                 echo "</div>";
@@ -53,11 +53,11 @@
             if (count($emprestimos) == 1) {
                 echo "<div class='emprestimos'>Nenhum livro em posse.</div>";
             } else {
-                echo "<div class='emprestimos'>";
-                for ($i=0; $i < count($emprestimos); $i++) { 
-                    echo "<tr><td>".$emprestimos[$i][0]."</td></tr></br>";
+                echo "<table>";
+                for ($i = 0; $i < count($emprestimos); $i++) {
+                    echo "<div class='emprestimos'><tr><td>".$emprestimos[$i][1]."</td></tr></div>";
                 }
-                echo "</div>";
+                echo "</table>";
             }
         ?>
         <table>
@@ -77,7 +77,7 @@
             while ($livros = pg_fetch_row($selectLivros)) {
                 echo "
                     <tr>
-                        <td><img src='".$livros[1]."'></td>
+                        <td class='td-img'><img src='".$livros[1]."'></td>
                         <td>".$livros[0]."</td>
                         <td class='td-form'>
                             <form method='post' action='usuario.php' >
@@ -86,9 +86,9 @@
                                 <input type='submit' value='Alugar'>
                             </form>
                         </td>
-                    </tr>
-                </table>";
+                    </tr>";
             }
+            echo "</table>";
         ?>
         <div class="container">
             <a href="redirect.php"><input class="button" type="button" value="Sair"></a>

@@ -39,13 +39,13 @@
                 $_SESSION['usernm'] = $usuarios[$i][4];
                 $_SESSION['usermail'] = $usuarios[$i][0];
                 $_SESSION['type'] = 'adm';
-                header("location: telaadm.php");
+                header("location: adm.php");
             } else {
                 $_SESSION['userid'] = $usuarios[$i][3];
                 $_SESSION['usernm'] = $usuarios[$i][4];
                 $_SESSION['usermail'] = $usuarios[$i][0];
                 $_SESSION['type'] = 'user';
-                header("location: telausuario.php");
+                header("location: usuario.php");
             }
         }
     }

@@ -8,7 +8,6 @@
         <link rel="stylesheet" href="./style/style.css" />
         <script src="./script/script.js" defer></script>
         <title>the amazing digital library</title>
-        <!-- https://colorhunt.co/palette/2b3499ff6c22ff9209ffd099 -->
     </head>
     <body>
         <header>

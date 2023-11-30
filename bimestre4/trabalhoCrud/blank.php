@@ -7,11 +7,11 @@
     switch ($_SESSION['type']) {
 
         case 'user':
-            header("location: telausuario.php");
+            header("location: usuario.php");
             break;
 
         case 'adm':
-            header("location: telaadm.php");
+            header("location: adm.php");
             break;
 
         default:

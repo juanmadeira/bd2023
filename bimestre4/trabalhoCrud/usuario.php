@@ -32,7 +32,10 @@
             $path = "host=localhost dbname=trabalho41 user=postgres password=postgres";
             if(!$connection = pg_connect($path)) die ("Erro ao conectar ao banco<br>");
 
-            if($_POST['livroId'] != null && $_POST['local'] == "usuario") {
+        ?>
+        <img src="./img/emprestimos.png" alt="emprestimos" />
+        <?php
+            if(isset($_POST['livroId']) != null && $_POST['local'] == "usuario") {
                 $date = date('d m Y h:i', time());
                 pg_query($connection, "INSERT INTO emprestimo (tempo, idusuario, idlivro) VALUES ('".$date."',".$_SESSION['userid'].",".$_POST['livroId'].");");
                 header("location: blank.php");

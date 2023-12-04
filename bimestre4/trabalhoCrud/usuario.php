@@ -53,11 +53,9 @@
             if (count($emprestimos) == 1) {
                 echo "<div class='emprestimos'>Nenhum livro em posse.</div>";
             } else {
-                echo "<table>";
-                for ($i = 0; $i < count($emprestimos); $i++) {
-                    echo "<div class='emprestimos'><tr><td>".$emprestimos[$i][1]."</td></tr></div>";
+                for ($i = 0; $i < count($emprestimos) - 1; $i++) {
+                    echo "<div class='emprestimos'><tr><td>".$emprestimos[$i][0]."</td></tr></div>";
                 }
-                echo "</table>";
             }
         ?>
         <table>
